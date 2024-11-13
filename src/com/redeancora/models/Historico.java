@@ -30,11 +30,17 @@ public class Historico {
 
     public void consultarHistoricoCotacoes() {
         System.out.println("Histórico de Cotações:");
+        if(listaCotacoes.isEmpty()) {
+            System.out.println("Não há nenhuma cotação");
+        }
         listaCotacoes.forEach(Cotacao::gerarResumoCotacao);
     }
 
     public void consultarHistoricoPedidos() {
         System.out.println("Historico de Pedidos:");
+        if(listaPedidos.isEmpty()) {
+            System.out.println("Não há nenhum pedido");
+        }
         listaPedidos.forEach(pedido -> System.out.println("Pedido #" + pedido.getIdPedido() + " - Valor Total: R$" + pedido.getValorTotal()));
     }
 }

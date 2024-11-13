@@ -23,28 +23,28 @@ public class Loja {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
     public String getLocalizacao() {
         return localizacao;
     }
 
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
+    public void setListaProdutos(List<Produto> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+    }
+
+    public void adicionarProduto(Produto produto) {
+        this.listaProdutos.add(produto);
     }
 
     public List<Produto> getListaProdutos() {
         return listaProdutos;
+    }
+
+    public void listarProdutos() {
+        System.out.println("\nProdutos disponíveis na loja " + nome + ":");
+        for (int i = 0; i < listaProdutos.size(); i++) {
+            Produto produto = listaProdutos.get(i);
+            System.out.println((i + 1) + ". " + produto.getNome() + " - R$" + produto.getPreco());
+        }
     }
 
 
